@@ -18,6 +18,7 @@ def code(request,title,id):
     question = problem.objects.get(id =id)
     testcases = list(test_case.objects.filter(problem = question,isPublic=True))
     question =[question]+testcases
+    print("hello")
     data = serializers.serialize('json',question)
     
     return HttpResponse(data,content_type="application/json")
