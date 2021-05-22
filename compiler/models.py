@@ -26,5 +26,4 @@ class test_case(models.Model):
     isPublic =models.BooleanField(default=True)
     def _str__(self):
         return self.id
-
 #test,test@2021
