@@ -7,5 +7,7 @@ from django.conf import settings
 urlpatterns = [
     path('questions',views.questions),
     path('problem/<str:title>/<str:id>',views.code),
+    path('compile',views.compile),
+    path('submit',views.submit_code),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

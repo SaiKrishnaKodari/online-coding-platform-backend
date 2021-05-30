@@ -25,5 +25,5 @@ class test_case(models.Model):
     description = models.TextField(max_length =500,default="")
     isPublic =models.BooleanField(default=True)
     def _str__(self):
-        return self.id
+        return self.input
 #test,test@2021
