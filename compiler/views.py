@@ -8,8 +8,8 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 CODE_EVALUATION_URL = u'https://api.hackerearth.com/v4/partner/code-evaluation/submissions/'
-CLIENT_SECRET = '7b9e5877ccb804b9ae5e690c33e47fcfc72d31ec'
-CLIENT_ID ='7f5bd882998711a63b94adce5b399a48974a3b2d7942.api.hackerearth.com'
+CLIENT_SECRET = '8331c729bada537c508c7036dbdad95118694c64'
+CLIENT_ID ='d3983383345f7eaab23be3d801dede79f6f9900b3eed.api.hackerearth.com'
 
 
 def questions(request):
@@ -59,7 +59,7 @@ def compile(request,code="",language="PYTHON3",input=""):
  
         r = requests.post(RUN_URL, data=data)
         # print(r.json(),type(r.json()))
-        # print(r)
+        print(r)
         resp=r.json()
         return JsonResponse(resp)
 
@@ -98,6 +98,7 @@ def submit_code(request):
         r = requests.post(RUN_URL, data=data)
         resp=r.json()
         run_status = resp.get("run_status",None),
+        print('wwwwwwww',run_status)
         if run_status!=None:
             # print(run_status)
             output = run_status[0].get("output","ERROR")
